@@ -8,7 +8,7 @@ android {
     signingConfigs {
         getByName("debug") {
             storeFile =
-                file("C:\\Users\\Gab\\Documents\\repos\\fetch-coding-exercise\\keystore.jks")
+                file("\\path\\to\\keystore.jks")
             storePassword = "fetchandroid"
             keyAlias = "codingExercise"
             keyPassword = "fetchandroid"
@@ -16,7 +16,6 @@ android {
     }
     namespace = "com.gabcletourneau.codingexercise"
     compileSdk = 35
-
 
     defaultConfig {
         applicationId = "com.gabcletourneau.codingexercise"
@@ -33,8 +32,7 @@ android {
         )
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
-
+    
     buildTypes {
         release {
             isMinifyEnabled = false
