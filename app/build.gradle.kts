@@ -7,6 +7,7 @@ plugins {
 android {
     signingConfigs {
         getByName("debug") {
+            // The path to the keystore needs to be adjusted to the local environment
             storeFile =
                 file("\\path\\to\\keystore.jks")
             storePassword = "fetchandroid"
@@ -32,7 +33,7 @@ android {
         )
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-    
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -40,6 +41,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
         debug {
             isMinifyEnabled = false
